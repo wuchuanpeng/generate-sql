@@ -34,7 +34,7 @@ public class GenSqlByExcelController {
 
     /**
      * 生成SQL
-     * @param dictFile 上传的数据库设计文档
+     * @param dictFile 上传的数据库数据字典
      * @param tableSplit 数据表表分割字符串
      * @return
      */
