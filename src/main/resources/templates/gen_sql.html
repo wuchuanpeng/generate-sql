@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>generate-sql</title>
+</head>
+<body>
+<div style="width: 600px;height: 500px;margin: 0px auto;border: 2px solid #eee">
+    <form action="/genSQL" enctype="multipart/form-data" onsubmit="return check()" method="post">
+        <table style="width: 100%;height: 500px;">
+            <tr>
+                <td colspan="2" style="text-align: center;font-size: 24px;">
+                    通过EXCEL数据库设计文档生成SQL建表语句
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 30px">
+                   <a href="/static/generate-sql使用教程.docx">帮助文档</a>
+                </td>
+            </tr>
+            <tr>
+                <td>上传数据库设计文档</td>
+                <td><input type="file" name="dictFile" id="dictFile" accept=".xlsx"></td>
+            </tr>
+            <tr>
+                <td>数据表分割字符串</td>
+                <td><input type="text" name="tableSplit" value="TABLE_END_END_END" ></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button style="font-size: 20px;">提交</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    ©2018 <a href="https://www.nonone.cc">NonOne</a>版权所有
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+    function check() {
+        var dictFile = document.getElementById("dictFile").value;
+        if(dictFile == "") {
+            alert("请选择正确的excel文件!");
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
+
